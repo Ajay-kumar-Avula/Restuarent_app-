@@ -1,41 +1,29 @@
 .navContainer {
-  background-color: #ffffff;
-  box-shadow: 10px 10px rgb(214, 220, 222);
-  position: fixed-top;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.heading {
-  color: black;
-  font-size: 24px;
-  font-family: 'Roboto';
-  margin: 0;
-}
-
-.navContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
 }
 
+.heading {
+  margin: 0;
+  font-size: 25px;
+}
+
 .cartContainer {
   position: relative;
   display: flex;
-  align-items: center;
 }
 
 .cart {
   font-size: 24px;
-  margin-right: 10px;
+  align-self: center;
 }
 
 .cartCount {
   position: absolute;
-  top: -5px;
-  right: 8px;
+  top: -8px;
+  right: -5px;
   background-color: red;
   color: white;
   border-radius: 50%;

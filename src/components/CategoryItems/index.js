@@ -1,8 +1,7 @@
 import './index.css'
 
 const CategoryItems = ({category, cart, onQuantityChange}) => {
-  if (!category || !category.categoryDishes) return null
-
+  if (!category.categoryDishes) return null
   return (
     <div>
       <h1 className="category-name">{category.menuCategory}</h1>
@@ -15,10 +14,12 @@ const CategoryItems = ({category, cart, onQuantityChange}) => {
               <div className="item-details">
                 <h1>{dish.dishName}</h1>
                 <p>{dish.dishDescription}</p>
+
                 <p>
                   {dish.dishCurrency} {dish.dishPrice}
                 </p>
-                <p>{dish.dishCalories} Calories</p>
+
+                <p>{dish.dishCalories} calories</p>
                 {!dish.dishAvailability ? (
                   <p>Not available</p>
                 ) : (

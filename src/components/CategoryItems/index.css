@@ -8,10 +8,13 @@
   margin: 10px;
   border: 1px solid #ccc;
   padding: 10px;
-  width:;
   justify-content: space-between;
 }
-
+@media (width<576px) {
+  .item {
+    width: 300px;
+  }
+}
 .item img {
   width: 100px;
   height: 100px;
@@ -24,7 +27,7 @@
   flex-direction: column;
 }
 
-.item-details h3 {
+.item-details h1 {
   margin: 0;
   font-size: 1.2em;
 }
@@ -45,6 +48,6 @@
   margin: 0 10px;
   cursor: pointer;
 }
-.category-name {
-  padding-left: 20px;
+.currency{
+  display: flex;
 }

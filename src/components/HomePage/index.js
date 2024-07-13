@@ -8,8 +8,8 @@ class Home extends Component {
   state = {
     menuCategories: [],
     selectedCategoryIndex: 0,
-    cart: {},
-    cartCount: 0,
+    cart: {}, // To keep track of items in the cart
+    cartCount: 0, // To keep track of total items in the cart
   }
 
   componentDidMount() {
@@ -46,7 +46,6 @@ class Home extends Component {
         throw new Error('Network response was not ok')
       }
       const response = await fetchUrl.json()
-      console.log(response)
       const updatedData = this.getUpdatedData(response[0].table_menu_list)
       this.setState({menuCategories: updatedData})
     } catch (error) {
@@ -90,17 +89,20 @@ class Home extends Component {
       <div>
         <NavBar cartCount={cartCount} />
 
-        <Carousel
-          menuCategories={menuCategories}
-          onSlideChange={this.handleSlideChange}
-          selectedCategoryIndex={selectedCategoryIndex}
-        />
-
-        <CategoryItems
-          category={selectedCategory}
-          cart={cart}
-          onQuantityChange={this.handleQuantityChange}
-        />
+        <ul>
+          <Carousel
+            menuCategories={menuCategories}
+            onSlideChange={this.handleSlideChange}
+            selectedCategoryIndex={selectedCategoryIndex}
+          />
+        </ul>
+        <ul>
+          <CategoryItems
+            category={selectedCategory}
+            cart={cart}
+            onQuantityChange={this.handleQuantityChange}
+          />
+        </ul>
       </div>
     )
   }

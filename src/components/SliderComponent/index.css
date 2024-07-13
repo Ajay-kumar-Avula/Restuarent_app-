@@ -23,3 +23,7 @@
   list-style-type: none;
   justify-content: center;
 }
+.category-btn{
+  border:none;
+  background: none;
+}
